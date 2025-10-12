@@ -1,23 +1,187 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Curse of Strahd Campaign</title>
-  <style>
-    body { font-family: Georgia; background: #111; color: #eee; padding: 20px; }
-    h1 { color: crimson; }
-    a { color: gold; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Bloody Ledger</title>
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=IM+Fell+DW+Pica:ital@1&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- General Styles --- */
+        body {
+            /* Background image with a slight, repeating texture for old paper/parchment */
+            background-color: #1a1a1a;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect x="0" y="0" width="100" height="100" fill="%231a1a1a" /><circle cx="50" cy="50" r="1" fill="%23330000" opacity="0.3" /></svg>');
+            color: #d4c5a9; /* Aged parchment color for text */
+            font-family: 'IM Fell DW Pica', serif; /* A classic, slightly antique-looking font */
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        /* --- Header/Title --- */
+        .header {
+            background-color: #0d0d0d;
+            padding: 40px 20px;
+            border-bottom: 5px solid #630000; /* Deep red separator for blood */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 10;
+        }
+
+        h1 {
+            font-family: 'Creepster', cursive; /* A truly scary, dripping font */
+            font-size: 5rem;
+            color: #990000; /* Blood red for the main title */
+            text-shadow: 4px 4px 2px #000000, 0 0 10px #ff0000; /* Shadow for depth and a glow */
+            margin-bottom: 5px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #a49174;
+            font-style: italic;
+            margin-top: 0;
+        }
+
+        /* --- Main Content Area --- */
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: rgba(13, 13, 13, 0.85); /* Slightly transparent dark background */
+            border: 2px solid #330000;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+            border-radius: 5px;
+            text-align: left;
+        }
+
+        /* --- Section Titles --- */
+        h2 {
+            font-family: 'IM Fell DW Pica', serif;
+            font-size: 2.5rem;
+            color: #d4c5a9;
+            border-bottom: 1px solid #330000;
+            padding-bottom: 5px;
+            margin-top: 30px;
+            text-transform: capitalize;
+        }
+
+        /* --- Link Styling (like an old book's marginalia) --- */
+        a {
+            color: #e6e6e6;
+            text-decoration: none;
+            border-bottom: 1px dashed #e6e6e6;
+            transition: color 0.3s, border-bottom 0.3s;
+        }
+
+        a:hover {
+            color: #ff0000; /* Blood red on hover */
+            border-bottom: 1px solid #ff0000;
+        }
+
+        /* --- Lists (for Character/Session Info) --- */
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        li {
+            margin-bottom: 15px;
+            padding-left: 10px;
+            border-left: 3px solid #630000; /* Blood-colored marker */
+        }
+        
+        /* --- Spooky Element: The 'Blood Splatter' Divider --- */
+        .divider {
+            height: 10px;
+            margin: 40px 0;
+            background: linear-gradient(to right, 
+                #1a1a1a 0%, 
+                #630000 20%, 
+                #990000 50%, 
+                #630000 80%, 
+                #1a1a1a 100%);
+            opacity: 0.7;
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+        }
+
+        /* --- Map/Image Placeholder --- */
+        .map-placeholder {
+            width: 100%;
+            height: 300px;
+            background-color: #330000;
+            border: 2px dashed #990000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #d4c5a9;
+            margin-top: 20px;
+        }
+
+    </style>
 </head>
 <body>
-  <h1>Jade, Thorgar, Katya & Tot Pot’s Journey</h1>
-  <p>Welcome, adventurers! Here you’ll find session recaps, lore, and clues about Barovia.</p>
 
-  <h2>Recent Sessions</h2>
-  <ul>
-    <li><a href="session1.html">Session 1 – Death House</a></li>
-    <li><a href="session2.html">Session 2 – Escape from Barovia</a></li>
-  </ul>
+    <header class="header">
+        <h1>The Bloody Ledger</h1>
+        <p class="subtitle">The Record of the Guardians of the Dungeon's Tale and Fate</p>
+    </header>
 
-  <footer>May the Morninglord watch over you ☀️</footer>
+    <div class="container">
+
+        <section id="story-hook">
+            <h2>The Mists of Barovia</h2>
+            <p>
+                A chilling fog has descended, clinging to the soul and refusing to lift. You find yourselves dragged, unwilling or not, into the grim valley of Barovia—a prison overseen by the dreaded **Count Strahd von Zarovich**. The land itself is a cruel, beautiful monster, and every soul here is a pawn in a game you did not choose to play.
+            </p>
+            <p>
+                This ledger records the **sessions played**, the **secrets uncovered**, and the **fates sealed** by those who dare challenge the lord of Ravenloft. Read it, if you have the stomach for it.
+            </p>
+        </section>
+
+        <div class="divider"></div>
+
+        <section id="guardians">
+            <h2>The Guardians of the Dungeon</h2>
+            <p>The heroes who carry the weight of this cursed land upon their shoulders:</p>
+            <ul>
+                <li><strong>Grog "The Unwise" Stonehand:</strong> Human Barbarian. *Current Status: Haunted by the cry of a ghostly child.*</li>
+                <li><strong>Seraphina "The Light":</strong> Elf Cleric. *Current Status: Carrying a mysterious relic stolen from the Abbey.*</li>
+                <li><strong>Roric "The Shadow":</strong> Halfling Rogue. *Current Status: Missing a finger and trusting no one.*</li>
+                <li><strong>Elara "The Scholar":</strong> Tiefling Wizard. *Current Status: Obsessed with finding the tome of Strahd.*</li>
+            </ul>
+        </section>
+
+        <div class="divider"></div>
+
+        <section id="session-log">
+            <h2>Session Log & Key Events</h2>
+            <ul>
+                <li><strong>Session 1:</strong> The Old Svalich Road. Entered Barovia. Encountered the Vistani at Tser Pool. Received the first **Tarokka Reading**.</li>
+                <li><strong>Session 2:</strong> Village of Barovia. Met Ismark and Ireena. Fought the animated armor in the manor. **Ireena Kolyana** is now traveling with the party.</li>
+                <li><strong>Session 3:</strong> The Bonegrinder. Failed to stop the hags. **Roric's finger was taken** as payment for safe passage. (See Notes: *Witches' Vows*).</li>
+                <li><a href="link-to-next-session-log.html">View All Session Recaps...</a></li>
+            </ul>
+        </section>
+
+        <div class="divider"></div>
+
+        <section id="map-reference">
+            <h2>Reference: Map of Barovia</h2>
+            <div class="map-placeholder">
+                [Placeholder for the Barovian Map Image - Replace this text with an `<img>` tag]
+            </div>
+            <p style="text-align: center; margin-top: 10px;">
+                <a href="link-to-high-res-map.jpg">Download the Annotated Map</a>
+            </p>
+        </section>
+
+    </div>
+
 </body>
 </html>
