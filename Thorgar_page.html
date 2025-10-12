@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Veiled Gate</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Spectral+SC&display=swap');
+
+    body {
+      background-color: #000;
+      color: #d8cfc4;
+      font-family: 'Spectral SC', serif;
+      text-align: center;
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    h2 {
+      font-family: 'Cinzel', serif;
+      font-size: 2rem;
+      color: #b88a58;
+      text-shadow: 0 0 10px #000;
+      letter-spacing: 1px;
+    }
+
+    p {
+      color: #bbb;
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+      max-width: 400px;
+    }
+
+    input {
+      background-color: #111;
+      border: 1px solid #b88a58;
+      color: #eee;
+      padding: 10px 15px;
+      border-radius: 5px;
+      font-size: 16px;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: #d8cfc4;
+      box-shadow: 0 0 10px #b88a58;
+    }
+
+    button {
+      padding: 10px 25px;
+      margin-top: 10px;
+      font-family: 'Cinzel', serif;
+      background-color: #1a1a1a;
+      color: #d8cfc4;
+      border: 1px solid #b88a58;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #2a2a2a;
+      color: #fff;
+      box-shadow: 0 0 8px #b88a58;
+    }
+
+    #content {
+      display: none;
+      animation: fadeIn 1.5s ease-in;
+      margin-top: 30px;
+    }
+
+    #content h1 {
+      font-family: 'Cinzel', serif;
+      color: #b88a58;
+    }
+
+    #content p {
+      font-size: 1.1rem;
+      color: #cfcfcf;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <h1>The Veiled Gate</h1>
+  <p id="question">“The name of the one who speaks in a way that only you can hear...”</p>
+  <input type="text" id="password" placeholder="Enter your answer">
+  <br>
+  <button id="enterButton">Enter</button>
+
+  <div id="content">
+    <h1>Welcome, Traveler of the Mists</h1>
+    <p>You have stepped beyond the veil. The chronicles await.</p>
+	
+		<br>
+	
+	<section class="private-note">
+  <h3>Private Note — Thorgar, the Mountain</h3>
+  <p><em>
+  The earth beneath Barovia remembers the weight of giants and the roar of avalanches.  
+  You stand where mountains once walked.  
+  When thunder answers your rage, listen closely—  
+  the storm calls you by your true name, the one you buried under victory.  
+  Feed it courage, not wrath.
+  </em></p>
+</section>
+	
+	
+	
+
+
+	
+	
+	
+	
+	<br>
+	<h1>Main Character Objectives</h1>
+	 <p>Prove your strength without raging, Barovia tests more than muscle, it tests restraint. </p>
+	 <p>Hunt the beast that haunts your dreams, doing so might reveala hidden truth</p>
+	  <p>Protect Jade when the Earth Trembles, no matter the cost...</p>
+	 <p>Reclaim the Strength of the Mountains, a tribute such as weapon?</p>
+	 <p>Feed Cravenedge to it's maximum potential, or not...</p>
+	 <p>Convince Jade to umm... "unsheath you're sword"</p>
+	 
+	
+	
+	<h1>Secrects Only You Know</h1>
+	<p>During your time at camp while you were on watch you were dangerously close to murdering the sleeping Children.</p>
+	<p>You aren't sure who the target might be the next time the blade hasn't been satiated for a while</p>
+	<p>You are going to miss having Freak around since he looked up to you so much, maybe you can give him a smal gift before leaving him at the orphanage?</p>
+	
+	
+	
+	
+	
+	
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const button = document.getElementById("enterButton");
+      const input = document.getElementById("password");
+      const content = document.getElementById("content");
+      const correctAnswer = "cravenedge"; // <--- set your answer here
+
+      button.addEventListener("click", function() {
+        const userAnswer = input.value.trim().toLowerCase();
+
+        if (userAnswer === correctAnswer) {
+          content.style.display = "block";
+          document.querySelector("h2").style.display = "none";
+          document.getElementById("question").style.display = "none";
+          input.style.display = "none";
+          button.style.display = "none";
+        } else {
+          alert("That answer is not correct. Try again...");
+        }
+      });
+    });
+  </script>
+</body>
+</html>

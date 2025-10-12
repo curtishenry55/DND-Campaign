@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Veiled Gate</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Spectral+SC&display=swap');
+
+    body {
+      background-color: #000;
+      color: #d8cfc4;
+      font-family: 'Spectral SC', serif;
+      text-align: center;
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    h2 {
+      font-family: 'Cinzel', serif;
+      font-size: 2rem;
+      color: #b88a58;
+      text-shadow: 0 0 10px #000;
+      letter-spacing: 1px;
+    }
+
+    p {
+      color: #bbb;
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+      max-width: 400px;
+    }
+
+    input {
+      background-color: #111;
+      border: 1px solid #b88a58;
+      color: #eee;
+      padding: 10px 15px;
+      border-radius: 5px;
+      font-size: 16px;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: #d8cfc4;
+      box-shadow: 0 0 10px #b88a58;
+    }
+
+    button {
+      padding: 10px 25px;
+      margin-top: 10px;
+      font-family: 'Cinzel', serif;
+      background-color: #1a1a1a;
+      color: #d8cfc4;
+      border: 1px solid #b88a58;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #2a2a2a;
+      color: #fff;
+      box-shadow: 0 0 8px #b88a58;
+    }
+
+    #content {
+      display: none;
+      animation: fadeIn 1.5s ease-in;
+      margin-top: 30px;
+    }
+
+    #content h1 {
+      font-family: 'Cinzel', serif;
+      color: #b88a58;
+    }
+
+    #content p {
+      font-size: 1.1rem;
+      color: #cfcfcf;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <h1>The Veiled Gate</h1>
+  <p id="question">“The name of the only deity worth worship...”</p>
+  <input type="text" id="password" placeholder="Enter your answer">
+  <br>
+  <button id="enterButton">Enter</button>
+
+  <div id="content">
+    <h1>Welcome, Traveler of the Mists</h1>
+    <p>You have stepped beyond the veil. The chronicles await.</p>
+	
+		<br>
+	
+<section class="private-note">
+  <h3>Private Note — Tot Pot, The Light</h3>
+  <p><em>
+  The mist dims your glow, but cannot snuff it out. The Dawnfather still watches—though even he strains to see through the fog.<br><br>
+
+  <strong>Private Objectives:</strong><br>
+  • Restore the Dawn’s Voice bring light to this dark world in any way you can<br>
+  • Restore the bones of St. Andral to the church in Vallaki<br>
+  • Convert 3 non believers and bring them to the light<br>
+  • Record a Miracle<br>
+  • Help out the old women with her request at the church about the shoemaker<br>
+
+  <strong>Secrets You Hold:</strong><br>
+  • The longer you are in Barovia the more detached you are starting to feel from your God. <br>
+  • If this continues you feel like some of your spells might not work as intended<br>
+  • When you channel too much light, the Dawnfather’s warmth feels heavy—like a debt collecting itself.
+  </em></p>
+</section>
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const button = document.getElementById("enterButton");
+      const input = document.getElementById("password");
+      const content = document.getElementById("content");
+      const correctAnswer = "dawnfather"; // <--- set your answer here
+
+      button.addEventListener("click", function() {
+        const userAnswer = input.value.trim().toLowerCase();
+
+        if (userAnswer === correctAnswer) {
+          content.style.display = "block";
+          document.querySelector("h2").style.display = "none";
+          document.getElementById("question").style.display = "none";
+          input.style.display = "none";
+          button.style.display = "none";
+        } else {
+          alert("That answer is not correct. Try again...");
+        }
+      });
+    });
+  </script>
+</body>
+</html>
