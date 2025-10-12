@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Veiled Gate</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Spectral+SC&display=swap');
+
+    body {
+      background: radial-gradient(circle at top, #1a1a1a 0%, #000 80%);
+      color: #d8cfc4;
+      font-family: 'Spectral SC', serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    /* Mist effect */
+    body::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: url('https://www.transparenttextures.com/patterns/foggy.png') repeat;
+      opacity: 0.15;
+      animation: drift 60s linear infinite;
+    }
+
+    @keyframes drift {
+      from { background-position: 0 0; }
+      to { background-position: 1000px 0; }
+    }
+
+    h2 {
+      font-family: 'Cinzel', serif;
+      font-size: 2rem;
+      color: #c4a47a;
+      text-shadow: 0 0 10px #5e3b22;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: #cfcfcf;
+      margin-bottom: 20px;
+      max-width: 400px;
+    }
+
+    input {
+      padding: 10px 15px;
+      font-size: 16px;
+      border: 1px solid #4a2b1c;
+      background-color: rgba(40, 30, 30, 0.9);
+      color: #eee;
+      border-radius: 5px;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    input:focus {
+      outline: none;
+      box-shadow: 0 0 10px #b88a58;
+    }
+
+    button {
+      padding: 10px 25px;
+      margin-top: 10px;
+      font-family: 'Cinzel', serif;
+      font-size: 1rem;
+      background: linear-gradient(145deg, #2e1a12, #3c261c);
+      color: #e8d3b8;
+      border: 1px solid #6d4a31;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 0 10px #000;
+    }
+
+    button:hover {
+      background: linear-gradient(145deg, #3c261c, #2e1a12);
+      color: #fff;
+      box-shadow: 0 0 15px #b88a58;
+    }
+
+    #content {
+      display: none;
+      animation: fadeIn 2s ease-in;
+      margin-top: 30px;
+    }
+
+    #content h1 {
+      font-family: 'Cinzel', serif;
+      color: #b88a58;
+      text-shadow: 0 0 15px #000;
+    }
+
+    #content p {
+      font-size: 1.1rem;
+      color: #d8cfc4;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <h2>The Veiled Gate Awaits</h2>
+  <p id="question">“What walks through mist, yet casts no shadow?”</p>
+  <input type="text" id="password" placeholder="Your answer here">
+  <br>
+  <button id="enterButton">Enter</button>
+
+  <div id="content">
+    <h1>Welcome, Traveler of the Mists</h1>
+    <p>Beyond these words lies the Chronicle of the Cursed — tales not meant for mortal eyes.</p>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const button = document.getElementById("enterButton");
+      const input = document.getElementById("password");
+      const content = document.getElementById("content");
+
+      const correctAnswer = "spirit"; // <--- your answer here
+
+      button.addEventListener("click", function() {
+        const userAnswer = input.value.trim().toLowerCase();
+
+        if (userAnswer === correctAnswer) {
+          content.style.display = "block";
+          document.querySelector("h2").style.display = "none";
+          document.getElementById("question").style.display = "none";
+          input.style.display = "none";
+          button.style.display = "none";
+        } else {
+          alert("That answer is not correct. Try again...");
+        }
+      });
+    });
+  </script>
+</body>
+</html>
