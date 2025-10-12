@@ -124,28 +124,28 @@
     <p>Beyond these words lies the Chronicle of the Cursed — tales not meant for mortal eyes.</p>
   </div>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      const button = document.getElementById("enterButton");
-      const input = document.getElementById("password");
-      const content = document.getElementById("content");
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const button = document.getElementById("enterButton");
+      const input = document.getElementById("password");
+      const content = document.getElementById("content");
 
-      const correctAnswer = "roland"; // <--- your answer here
+      const correctAnswer = "roland"; // <--- your answer here
 
-      button.addEventListener("click", function() {
-        const userAnswer = input.value.trim().toLowerCase();
+      button.addEventListener("click", function() {
+        const userAnswer = input.value.trim().toLowerCase();
 
-        if (userAnswer === correctAnswer) {
-          content.style.display = "block";
-          document.querySelector("h2").style.display = "none";
-          document.getElementById("question").style.display = "none";
-          input.style.display = "none";
-          button.style.display = "none";
-        } else {
-          alert("That answer is not correct. Try again...");
-        }
-      });
-    });
-  </script>
+        if (userAnswer === correctAnswer) {
+          content.style.display = "block";
+          document.querySelector("h2").style.display = "none";
+          document.getElementById("question").style.display = "none";
+          input.style.display = "none";
+          button.style.display = "none";
+        } else {
+          alert("That answer is not correct. Try again...");
+        }
+      });
+    }); // <--- YOU MUST ADD THIS LINE
+  </script>
 </body>
 </html>
