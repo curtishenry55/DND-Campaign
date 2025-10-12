@@ -8,64 +8,47 @@
     @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Spectral+SC&display=swap');
 
     body {
-      background: radial-gradient(circle at top, #1a1a1a 0%, #000 80%);
+      background-color: #000;
       color: #d8cfc4;
       font-family: 'Spectral SC', serif;
       text-align: center;
-      margin: 0;
-      padding: 0;
       height: 100vh;
-      overflow: hidden;
+      margin: 0;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      position: relative;
-    }
-
-    /* Mist effect */
-    body::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: url('https://www.transparenttextures.com/patterns/foggy.png') repeat;
-      opacity: 0.15;
-      animation: drift 60s linear infinite;
-    }
-
-    @keyframes drift {
-      from { background-position: 0 0; }
-      to { background-position: 1000px 0; }
     }
 
     h2 {
       font-family: 'Cinzel', serif;
       font-size: 2rem;
-      color: #c4a47a;
-      text-shadow: 0 0 10px #5e3b22;
+      color: #b88a58;
+      text-shadow: 0 0 10px #000;
+      letter-spacing: 1px;
     }
 
     p {
+      color: #bbb;
       font-size: 1.1rem;
-      color: #cfcfcf;
       margin-bottom: 20px;
       max-width: 400px;
     }
 
     input {
-      padding: 10px 15px;
-      font-size: 16px;
-      border: 1px solid #4a2b1c;
-      background-color: rgba(40, 30, 30, 0.9);
+      background-color: #111;
+      border: 1px solid #b88a58;
       color: #eee;
+      padding: 10px 15px;
       border-radius: 5px;
+      font-size: 16px;
       text-align: center;
       transition: 0.3s;
     }
 
     input:focus {
       outline: none;
+      border-color: #d8cfc4;
       box-shadow: 0 0 10px #b88a58;
     }
 
@@ -73,37 +56,34 @@
       padding: 10px 25px;
       margin-top: 10px;
       font-family: 'Cinzel', serif;
-      font-size: 1rem;
-      background: linear-gradient(145deg, #2e1a12, #3c261c);
-      color: #e8d3b8;
-      border: 1px solid #6d4a31;
-      border-radius: 8px;
+      background-color: #1a1a1a;
+      color: #d8cfc4;
+      border: 1px solid #b88a58;
+      border-radius: 5px;
       cursor: pointer;
       transition: 0.3s;
-      box-shadow: 0 0 10px #000;
     }
 
     button:hover {
-      background: linear-gradient(145deg, #3c261c, #2e1a12);
+      background-color: #2a2a2a;
       color: #fff;
-      box-shadow: 0 0 15px #b88a58;
+      box-shadow: 0 0 8px #b88a58;
     }
 
     #content {
       display: none;
-      animation: fadeIn 2s ease-in;
+      animation: fadeIn 1.5s ease-in;
       margin-top: 30px;
     }
 
     #content h1 {
       font-family: 'Cinzel', serif;
       color: #b88a58;
-      text-shadow: 0 0 15px #000;
     }
 
     #content p {
       font-size: 1.1rem;
-      color: #d8cfc4;
+      color: #cfcfcf;
     }
 
     @keyframes fadeIn {
@@ -113,39 +93,73 @@
   </style>
 </head>
 <body>
-  <h2>The Veiled Gate Awaits</h2>
-  <p id="question">"The one who took the last breath from your Mother... in front of you... ”</p>
-  <input type="text" id="password" placeholder="Your answer here">
+  <h1>The Veiled Gate</h1>
+  <p id="question">“The name of the one who took the last breath from your mother... right before your eyes”</p>
+  <input type="text" id="password" placeholder="Enter your answer">
   <br>
   <button id="enterButton">Enter</button>
 
   <div id="content">
     <h1>Welcome, Traveler of the Mists</h1>
-    <p>Beyond these words lies the Chronicle of the Cursed — tales not meant for mortal eyes.</p>
+    <p>You have stepped beyond the veil. The chronicles await.</p>
+	
+		<br>
+	
+<section class="private-note">
+  <h1>Private Note — Katya, the Shadow</h1>
+  <p><em>
+  The blood hums louder in Barovia’s fog. You’ve begun to hear it speak—soft syllables like broken glass.  
+  “Karsaran: Break,” it whispers, but the word is not done with you yet.  
+  Somewhere near, you’ll feel the same thrum your father once followed.  
+  Trust only what bleeds <strong>honestly</strong>.
+  </em></p>
+</section>
+	
+	
+	
+	
+	
+	<br>
+	<h1>Main Character Objectives</h1>
+	 <p>Discover the Truth of your Bloodline, there must be some clues close by, maybe in this town?</p>
+	 <p>Something is telling you the secrects to a new power word can be found close by, maybe in this town?</p>
+	 <p>Protect the party, defend your chosen family with your own life. (Save each member from certain death) </p>
+	 <p>(   )Thorgar(   )Jade(   )Tot Pot</p>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
   </div>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      const button = document.getElementById("enterButton");
-      const input = document.getElementById("password");
-      const content = document.getElementById("content");
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const button = document.getElementById("enterButton");
+      const input = document.getElementById("password");
+      const content = document.getElementById("content");
+      const correctAnswer = "roland"; // <--- set your answer here
 
-      const correctAnswer = "roland"; // <--- your answer here
+      button.addEventListener("click", function() {
+        const userAnswer = input.value.trim().toLowerCase();
 
-      button.addEventListener("click", function() {
-        const userAnswer = input.value.trim().toLowerCase();
-
-        if (userAnswer === correctAnswer) {
-          content.style.display = "block";
-          document.querySelector("h2").style.display = "none";
-          document.getElementById("question").style.display = "none";
-          input.style.display = "none";
-          button.style.display = "none";
-        } else {
-          alert("That answer is not correct. Try again...");
-        }
-      });
-    }); // <--- YOU MUST ADD THIS LINE
-  </script>
+        if (userAnswer === correctAnswer) {
+          content.style.display = "block";
+          document.querySelector("h2").style.display = "none";
+          document.getElementById("question").style.display = "none";
+          input.style.display = "none";
+          button.style.display = "none";
+        } else {
+          alert("That answer is not correct. Try again...");
+        }
+      });
+    });
+  </script>
 </body>
 </html>
