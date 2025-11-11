@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Veiled Gate</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Spectral+SC&display=swap');
+
+    body {
+      background-color: #000;
+      color: #d8cfc4;
+      font-family: 'Spectral SC', serif;
+      text-align: center;
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    h2 {
+      font-family: 'Cinzel', serif;
+      font-size: 2rem;
+      color: #b88a58;
+      text-shadow: 0 0 10px #000;
+      letter-spacing: 1px;
+    }
+
+    p {
+      color: #bbb;
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+      max-width: 400px;
+    }
+
+    input {
+      background-color: #111;
+      border: 1px solid #b88a58;
+      color: #eee;
+      padding: 10px 15px;
+      border-radius: 5px;
+      font-size: 16px;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: #d8cfc4;
+      box-shadow: 0 0 10px #b88a58;
+    }
+
+    button {
+      padding: 10px 25px;
+      margin-top: 10px;
+      font-family: 'Cinzel', serif;
+      background-color: #1a1a1a;
+      color: #d8cfc4;
+      border: 1px solid #b88a58;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #2a2a2a;
+      color: #fff;
+      box-shadow: 0 0 8px #b88a58;
+    }
+
+    #content {
+      display: none;
+      animation: fadeIn 1.5s ease-in;
+      margin-top: 30px;
+    }
+
+    #content h1 {
+      font-family: 'Cinzel', serif;
+      color: #b88a58;
+    }
+
+    #content p {
+      font-size: 1.1rem;
+      color: #cfcfcf;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <h1>The Veiled Gate</h1>
+  <p id="question">“The name of the one who Strahd seeks”</p>
+  <input type="text" id="password" placeholder="Enter your answer">
+  <br>
+  <button id="enterButton">Enter</button>
+
+  <div id="content">
+    <h1>Welcome, Traveler of the Mists</h1>
+    <p>You have stepped beyond the veil. The chronicles await.</p>
+	
+		<br>
+	
+<section class="private-note">
+  <h1>REEEEEEEEEEEEEEEEECAP</h1>
+  <p><em>
+  The party left their home in search of supplies and found themselves trapped in mysterious fog.
+
+Tot Pot prayed to the Dawnfather, whose faint guidance helped them push forward.
+
+The group encountered two children, Rose and Thorn, crying outside a tall, dark house.
+
+The children begged the group to help their baby brother inside the house.
+
+Inside, the house sealed itself shut — no escape through doors or windows.
+
+The group explored multiple floors, finding elegant rooms hiding strange rot and decay.
+
+In the nursery, they discovered unsettling cult symbology and references to Strahd.
+
+The children’s ghosts revealed the truth: they had died there, long ago.
+
+Jade and Thorgar agreed to take the children’s remains to their rest, giving them gentle peace.
+
+Thorgar received Thorn’s stuffed bear — which still holds emotional + symbolic power.
+
+The group uncovered a hidden staircase leading down to the Death House dungeon.
+
+Chanting echoed endlessly: “One must die.”
+
+They found living quarters of a cult devoted to offering sacrifices to gain Strahd’s favor.
+
+They discovered a diary that detailed a cultist’s hope → doubt → horror as Gustav killed their friend.
+
+The party encountered traps, torture chambers, and disturbing remnants of ritual attempts.
+
+Jade acquired a Wand of Polymorph.
+
+Thorgar and Jade briefly disturbed a shadow statue of Strahd and were attacked by undead spirits.
+
+Katya and Tot Pot found footlocker treasures and Fang the pug (RIP sweet boy).
+
+After refusing to sacrifice anyone, the cult summoned Lorgarth, a shambling mound.
+
+The fight was brutal — but Thorgar landed the final strike, destroying the abomination.
+
+As the party escaped, the house began to collapse — walls shifting to kill them.
+
+They fought through skeletons in the catacombs and barely escaped the collapsing house.
+
+Once outside, the mists parted just enough to reveal the Village of Barovia.
+
+Morgantha, a kindly-seeming pastry seller, offered Dream Pastries (which are very not okay).
+
+The party met Ismark, son of the late Burgomaster, and learned about Ireena, marked by Strahd.
+
+They stayed in the Burgomaster’s mansion and learned that the father was dead.
+
+A night attack of wolves attempted to get at Ireena, reinforcing her need to leave.
+
+Jade learned that her mother Ruby was part of the Emerald Circle in Barovia — and died here.
+
+Ruby’s lingering spirit taught Jade that defeating Strahd requires severing the Heart of Sorrow.
+
+The group is now preparing to travel toward the Tser Pool Vistani encampment — where fate has more to reveal.
+  </em></p>
+</section>
+	
+	
+	
+	
+	
+	<br>
+	<h1>Current Party-Wide Goals (Right Now in Vallaki)</h1>
+	 <p>Protect Ireena while in Vallaki, where Strahd’s influence is subtle, not distant.
+
+Investigate the Orphanage, where the shadow presence has taken root.
+
+Confront the Shadow and prevent it from claiming a child (or a host).
+
+Keep Vallaki from collapsing into hysteria — the town is one spark away from chaos.
+
+Maintain trust with Ismark and the Vallaki townsfolk long enough to understand the political tension here.
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const button = document.getElementById("enterButton");
+      const input = document.getElementById("password");
+      const content = document.getElementById("content");
+      const correctAnswer = "ireena"; // <--- set your answer here
+
+      button.addEventListener("click", function() {
+        const userAnswer = input.value.trim().toLowerCase();
+
+        if (userAnswer === correctAnswer) {
+          content.style.display = "block";
+          document.querySelector("h2").style.display = "none";
+          document.getElementById("question").style.display = "none";
+          input.style.display = "none";
+          button.style.display = "none";
+        } else {
+          alert("That answer is not correct. Try again...");
+        }
+      });
+    });
+  </script>
+</body>
+</html>
