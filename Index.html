@@ -7,61 +7,39 @@
     <link href="https://fonts.googleapis.com/css2?family=Creepster&family=IM+Fell+DW+Pica:ital@1&display=swap" rel="stylesheet">
     
     <style>
-        /* --- General Styles --- */
         body {
             background-color: #0a0a0a;
-            /* Subtle vignette effect for a cinematic feel */
             background: radial-gradient(circle, #1a1a1a 0%, #050505 100%);
-            color: #c4b494; /* Aged parchment color */
+            color: #c4b494;
             font-family: 'IM Fell DW Pica', serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.7;
-            overflow-x: hidden;
+            margin: 0; padding: 0; line-height: 1.7;
         }
 
-        /* --- Header / Cinematic Title --- */
         .header {
             background-color: #000;
             padding: 60px 20px;
-            border-bottom: 3px solid #8b0000; /* Sharp blood line */
+            border-bottom: 3px solid #8b0000;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9);
             text-align: center;
         }
 
         h1 {
             font-family: 'Creepster', cursive;
-            font-size: clamp(3rem, 10vw, 6rem); /* Responsive sizing */
+            font-size: clamp(3rem, 10vw, 6rem);
             color: #b30000; 
             text-shadow: 3px 3px 0px #000, 0 0 20px #660000;
-            margin: 0;
-            letter-spacing: 8px;
-            text-transform: uppercase;
+            margin: 0; letter-spacing: 8px;
         }
 
-        .subtitle {
-            font-size: 1.2rem;
-            color: #a49174;
-            font-style: italic;
-            margin-top: 10px;
-        }
+        .subtitle { font-size: 1.1rem; color: #a49174; font-style: italic; margin-top: 10px; }
 
         .main-logo {
             display: block;
             margin: 30px auto 0 auto;
-            max-width: 250px; /* Adjust based on your logo shape */
-            height: auto;
+            max-width: 220px;
             filter: drop-shadow(0 0 15px rgba(139, 0, 0, 0.6));
-            opacity: 0.9;
-            transition: transform 0.3s ease;
         }
 
-        .main-logo:hover {
-            transform: scale(1.05);
-            opacity: 1;
-        }
-
-        /* --- Main Content Area --- */
         .container {
             max-width: 850px;
             margin: 50px auto;
@@ -69,88 +47,63 @@
             background-color: rgba(15, 15, 15, 0.95);
             border: 1px solid #222;
             box-shadow: 0 0 50px rgba(0,0,0,1);
-            position: relative;
         }
 
         h2 {
             font-family: 'Creepster', cursive;
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             color: #8b0000;
-            letter-spacing: 2px;
             border-bottom: 1px solid #330000;
             margin-top: 40px;
             padding-bottom: 10px;
         }
 
-        p {
-            margin-bottom: 20px;
-            font-size: 1.1rem;
-        }
-
-        /* --- List Styling --- */
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-
+        ul { list-style: none; padding: 0; }
+        
         li {
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             padding-left: 15px;
             border-left: 3px solid #4a0000;
-            transition: border-left 0.3s, background-color 0.3s;
         }
 
-        li:hover {
-            border-left: 3px solid #ff0000;
-            background-color: rgba(255, 0, 0, 0.05);
+        strong { color: #e0d0b0; }
+        em { color: #ff4444; font-weight: bold; font-style: normal; }
+
+        .secret-link {
+            font-size: 0.85rem;
+            color: #8b0000;
+            text-decoration: none;
+            font-style: italic;
+            border: 1px solid #330000;
+            padding: 2px 8px;
+            margin-left: 10px;
+            background: #000;
+            transition: all 0.3s;
+            display: inline-block;
         }
 
-        strong {
-            color: #e0d0b0;
-            font-variant: small-caps;
-            letter-spacing: 1px;
+        .secret-link:hover {
+            color: #ff0000;
+            border-color: #ff0000;
+            box-shadow: 0 0 8px #ff0000;
         }
 
-        em {
-            color: #ff4444; /* Used for magical items like Cravenedge */
-            font-weight: bold;
-            font-style: normal;
-        }
-
-        /* --- Divider --- */
         .divider {
             height: 2px;
             margin: 50px 0;
             background: linear-gradient(to right, transparent, #630000, #ff0000, #630000, transparent);
-            opacity: 0.6;
         }
 
-        /* --- Map Styling --- */
         .map-image {
             width: 100%;
             filter: sepia(0.2) contrast(1.1) brightness(0.7);
             border: 1px solid #330000;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.8);
             margin: 20px 0;
+            display: block;
         }
 
-        a {
-            color: #e6e6e6;
-            text-decoration: none;
-            border-bottom: 1px dashed #630000;
-            transition: color 0.3s;
-        }
-
-        a:hover {
-            color: #ff0000;
-            border-bottom: 1px solid #ff0000;
-        }
-
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #0a0a0a; }
-        ::-webkit-scrollbar-thumb { background: #4a0000; border-radius: 4px; }
-
+        a { color: #e6e6e6; text-decoration: none; border-bottom: 1px dashed #630000; }
+        a:hover { color: #ff0000; border-bottom: 1px solid #ff0000; }
     </style>
 </head>
 <body>
@@ -163,25 +116,25 @@
 
     <div class="container">
 
-        <section id="story-hook">
-            <h2>The Mists of Barovia</h2>
-            <p>
-                A chilling fog has descended, clinging to the soul and refusing to lift. You find yourselves dragged, unwilling or not, into the grim valley of Barovia—a prison overseen by the dreaded **Count Strahd von Zarovich**.
-            </p>
-            <p>
-                This ledger records the sessions played, the secrets uncovered, and the fates sealed by those who dare challenge the lord of Ravenloft. Read it, if you have the stomach for it.
-            </p>
-        </section>
-
-        <div class="divider"></div>
-
         <section id="guardians">
             <h2>The Guardians of the Dungeon</h2>
             <ul>
-                <li><strong>Thorgar "The Mountain":</strong> Human Barbarian. <br>Status: Wielding a newly evolved hunger.</li>
-                <li><strong>Tot Pot "The Light":</strong> Dwarf Cleric. <br>Status: Searching for the Bones of St. Andral.</li>
-                <li><strong>Katya "The Shadow":</strong> Human Bloodhunter. <br>Status: Vigilant against the darkness.</li>
-                <li><strong>Jade "The Emerald Flame":</strong> Human Druid. <br>Status: Reaching for Level 5 mastery.</li>
+                <li>
+                    <strong>Thorgar "The Mountain":</strong> Human Barbarian.
+                    <a href="Thorgar_page.html" class="secret-link">Personal Ledger (PW)</a>
+                </li>
+                <li>
+                    <strong>Tot Pot "The Light":</strong> Dwarf Cleric.
+                    <a href="Totpot_page.html" class="secret-link">Divine Ledger (PW)</a>
+                </li>
+                <li>
+                    <strong>Katya "The Shadow":</strong> Human Bloodhunter.
+                    <a href="Katya_page.html" class="secret-link">Crimson Ledger (PW)</a>
+                </li>
+                <li>
+                    <strong>Jade "The Emerald Flame":</strong> Human Druid.
+                    <a href="Jade_page.html" class="secret-link">Primal Ledger (PW)</a>
+                </li>
             </ul>
         </section>
 
@@ -189,3 +142,34 @@
 
         <section id="session-log">
             <h2>Key events from the last session</h2>
+            <ul>
+                <li>1. The Party fought and defeated the Shadow Demon in the attic of the Orphanage.</li>
+                <li>2. Thorgar ended up beheading Cedrick the young possessed boy, this was enough to get his blade <em>Cravenedge</em> to morph into a longer more deadly weapon.</li>
+                <li>3. <strong>Everyone leveled up to Level 5!!!!</strong></li>
+                <li>4. Ms. Belasco was thankful for you banishing the demon she gave you several items for the party to use moving forward including a set of <em>Sending Stones</em>.</li>
+                <li>5. It seems that all of you had similar dreams with one thing in common, Strahd was going to be calling for you... <strong>SOON!</strong></li>
+            </ul>
+        </section>
+
+        <div class="divider"></div>
+
+        <section id="map-reference">
+            <h2>Reference: Map of Barovia</h2>
+            <img src="Barovia Map middle.jpg" alt="Map of Barovia" class="map-image">
+            <p style="text-align: center;">
+                <a href="Barovia Map middle.jpg" target="_blank">Download Annotated Map</a>
+            </p>
+        </section>
+
+    </div>
+
+    <script>
+        const container = document.querySelector('.container');
+        setInterval(() => {
+            const opacity = 0.94 + (Math.random() * 0.06);
+            container.style.backgroundColor = `rgba(15, 15, 15, ${opacity})`;
+        }, 120);
+    </script>
+
+</body>
+</html>
