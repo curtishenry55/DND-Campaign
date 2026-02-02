@@ -3,14 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Veiled Gate</title>
+  <title>The Veiled Gate - Jade</title>
+  <link href="https://fonts.googleapis.com/css2?family=Creepster&family=IM+Fell+DW+Pica:ital@1&family=Cinzel:wght@600&display=swap" rel="stylesheet">
+  
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Spectral+SC&display=swap');
-
     body {
-      background-color: #000;
-      color: #d8cfc4;
-      font-family: 'Spectral SC', serif;
+      background-color: #0a0a0a;
+      background: radial-gradient(circle, #0a1a0a 0%, #050505 100%); /* Slight green tint */
+      color: #c4b494;
+      font-family: 'IM Fell DW Pica', serif;
       text-align: center;
       height: 100vh;
       margin: 0;
@@ -20,126 +21,129 @@
       align-items: center;
     }
 
+    h1 {
+      font-family: 'Creepster', cursive;
+      font-size: 4rem;
+      color: #b30000;
+      text-shadow: 3px 3px 0px #000, 0 0 20px #660000;
+      margin: 0;
+    }
+
+    /* Required for script functionality */
     h2 {
       font-family: 'Cinzel', serif;
-      font-size: 2rem;
-      color: #b88a58;
-      text-shadow: 0 0 10px #000;
-      letter-spacing: 1px;
+      font-size: 1.5rem;
+      color: #2e7d32; /* Jade Green */
+      margin-top: 10px;
     }
 
     p {
-      color: #bbb;
+      color: #a49174;
+      font-style: italic;
       font-size: 1.1rem;
       margin-bottom: 20px;
-      max-width: 400px;
+      max-width: 500px;
     }
 
     input {
-      background-color: #111;
-      border: 1px solid #b88a58;
+      background-color: #000;
+      border: 1px solid #2e7d32;
       color: #eee;
       padding: 10px 15px;
-      border-radius: 5px;
       font-size: 16px;
       text-align: center;
-      transition: 0.3s;
-    }
-
-    input:focus {
-      outline: none;
-      border-color: #d8cfc4;
-      box-shadow: 0 0 10px #b88a58;
     }
 
     button {
       padding: 10px 25px;
       margin-top: 10px;
       font-family: 'Cinzel', serif;
-      background-color: #1a1a1a;
-      color: #d8cfc4;
-      border: 1px solid #b88a58;
-      border-radius: 5px;
+      background-color: #000;
+      color: #2e7d32;
+      border: 1px solid #2e7d32;
       cursor: pointer;
-      transition: 0.3s;
     }
 
     button:hover {
-      background-color: #2a2a2a;
+      background-color: #1b5e20;
       color: #fff;
-      box-shadow: 0 0 8px #b88a58;
     }
 
     #content {
       display: none;
       animation: fadeIn 1.5s ease-in;
       margin-top: 30px;
+      max-width: 850px;
+      text-align: left;
+      background-color: rgba(10, 20, 10, 0.95);
+      padding: 40px;
+      border: 1px solid #1b5e20;
+      box-shadow: 0 0 50px rgba(0,0,0,1);
     }
 
-    #content h1 {
+    .private-note {
+      border-left: 3px solid #2e7d32;
+      padding: 25px;
+      background: rgba(46, 125, 50, 0.07);
+      margin-bottom: 30px;
+      font-style: italic;
+    }
+
+    h3 { font-family: 'Creepster', cursive; color: #2e7d32; font-size: 2.2rem; border-bottom: 1px solid #1b5e20; margin-top: 30px; }
+    
+    .footer-quote {
+      text-align: center;
       font-family: 'Cinzel', serif;
       color: #b88a58;
-    }
-
-    #content p {
-      font-size: 1.1rem;
-      color: #cfcfcf;
+      margin-top: 40px;
+      border-top: 1px solid #1b5e20;
+      padding-top: 20px;
     }
 
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(10px); }
       to { opacity: 1; transform: translateY(0); }
     }
+    
+    strong { color: #e0d0b0; }
+    em.moonlight { color: #81d4fa; text-shadow: 0 0 5px #0288d1; }
   </style>
 </head>
 <body>
   <h1>The Veiled Gate</h1>
+  <h2>Spirit of the Woods</h2>
   <p id="question">“The name of the one who helped you get ahead, until she lost hers...”</p>
   <input type="text" id="password" placeholder="Enter your answer">
   <br>
   <button id="enterButton">Enter</button>
 
   <div id="content">
-    <h1>Welcome, Traveler of the Mists</h1>
-    <p>You have stepped beyond the veil. The chronicles await.</p>
+    <h1 style="font-size: 3.5rem; text-align: center; color: #2e7d32;">Jade, the Emerald Flame</h1>
+    
+    <section class="private-note">
+      <p>
+        "The soil of Barovia is sour and choked by rot, yet the roots run deep. You feel the forest's heartbeat, 
+        though it is erratic—a dying pulse beneath the mists. The Dawn does not reach here, child of green, 
+        but the Emerald Flame still burns within you. Let your roots pierce the decay, for even in the shadow of the peaks, 
+        the earth remembers those who protect it."
+      </p>
+    </section>
 	
-		<br>
+    <h3>Private Objectives</h3>
+    <p><strong>1. Whisper of the Woods:</strong> Follow the voices in the wind. The trees of Barovia are not dead, only sleeping. Their roots remember what the people have forgotten.</p>
+    <p><strong>2. Starve the Rot:</strong> Something unnatural feeds from the land's very life force. Identify the source of the corruption and learn how to sever it.</p>
+    <p><strong>3. The Broken Cycle:</strong> Restore the balance of life and death, even if it demands a sacrifice the mists have yet to name.</p>
+    <p><strong>4. Ruby's Echo:</strong> Your mother’s death was no accident. Track the hand that silenced her voice within this valley.</p>
+    <p><strong>5. Circle of Shadows:</strong> Find the remnants of the Emerald Circle. If any survived the crossing, their fate is bound to your own.</p>
 	
-<section class="private-note">
-   <h1>Jade, the Emerald Flame</h1>
+    <h3>Secrets Only You Know</h3>
+    <p>• When you meditate beneath the <em class="moonlight">moonlight</em>, Ruby's voice warns: <em>“Do not feed the Heart of Sorrow. Each death strengthens him.”</em></p>
+    <p>• The light here is tainted; faint red hues dance at the edge of your <em>Moonbeam</em> spells, as if the land itself is bleeding into your magic.</p>
+    <p>• You awoke with damp soil in your hand—soil that felt alive, breathing, from a silver grove you have only seen in dreams.</p>
 
-  <div class="section">
-    <h2>Private Objectives</h2>
-    <p><strong>1.</strong> Follow the Whisper of the Woods — Even these defiled trees call to you, Their roots remember... something</p>
-    <p><strong>2.</strong> Seek the Heart’s Corruption — something unnatural feeds from the land itself. Learn how to starve it.</p>
-    <p><strong>3.</strong> Protect the Natural Balance — Laws demand to be followed, even if they seem unjust.</p>
-    <p><strong>4.</strong> Unravel Ruby’s Fate — your mother’s death was not by chance. Find who or what silenced her voice.</p>
-    <p><strong>5.</strong> Discover the Circle’s Remnants — others of the Emerald Circle entered Barovia. If they remain, their fate may mirror yours.</p>
-  </div>
-
-  <div class="section">
-    <h2>Secrets Only You Know</h2>
-    <p>When you meditate beneath the <em class="moonlight">moonlight</em>, your mother whispers:  
-      <em>“Do not feed the Heart of Sorrow. Each death strengthens him.” Maybe our group needs to kill less?</em></p>
-
-    <p>The moonlight here feels tainted — faint red hues dance at the edge of your spells.</p>
-
-    <p>Once, you dreamt of a grove of silver trees calling your name. You awoke with damp soil in your hand — alive, breathing, from a place you have never seen. Your dreams can be REAL.</p>
-  </div>
-
-  <div class="footer">
-    “The land is ill, child of green. Let your roots pierce its rot.”
-  </div>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+    <div class="footer-quote">
+      “The land is ill, child of green. Let your roots pierce its rot.”
+    </div>
   </div>
 
   <script>
@@ -147,17 +151,19 @@
       const button = document.getElementById("enterButton");
       const input = document.getElementById("password");
       const content = document.getElementById("content");
-      const correctAnswer = "ruby"; // <--- set your answer here
+      const correctAnswer = "ruby"; 
 
       button.addEventListener("click", function() {
         const userAnswer = input.value.trim().toLowerCase();
 
         if (userAnswer === correctAnswer) {
           content.style.display = "block";
+          document.querySelector("h1").style.display = "none";
           document.querySelector("h2").style.display = "none";
           document.getElementById("question").style.display = "none";
           input.style.display = "none";
           button.style.display = "none";
+          document.body.style.justifyContent = "flex-start";
         } else {
           alert("That answer is not correct. Try again...");
         }

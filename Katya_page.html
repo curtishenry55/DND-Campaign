@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Veiled Gate</title>
+  <title>The Veiled Gate - Katya</title>
+  <link href="https://fonts.googleapis.com/css2?family=Creepster&family=IM+Fell+DW+Pica:ital@1&family=Cinzel:wght@600&display=swap" rel="stylesheet">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Spectral+SC&display=swap');
-
     body {
-      background-color: #000;
-      color: #d8cfc4;
-      font-family: 'Spectral SC', serif;
+      background-color: #0a0a0a;
+      background: radial-gradient(circle, #1a1a1a 0%, #050505 100%);
+      color: #c4b494;
+      font-family: 'IM Fell DW Pica', serif;
       text-align: center;
       height: 100vh;
       margin: 0;
@@ -20,123 +20,123 @@
       align-items: center;
     }
 
+    h1 {
+      font-family: 'Creepster', cursive;
+      font-size: 4rem;
+      color: #b30000;
+      text-shadow: 3px 3px 0px #000, 0 0 20px #660000;
+      margin: 0;
+    }
+
     h2 {
       font-family: 'Cinzel', serif;
-      font-size: 2rem;
-      color: #b88a58;
-      text-shadow: 0 0 10px #000;
-      letter-spacing: 1px;
+      font-size: 1.5rem;
+      color: #8b0000;
+      margin-top: 10px;
     }
 
     p {
-      color: #bbb;
+      color: #a49174;
+      font-style: italic;
       font-size: 1.1rem;
       margin-bottom: 20px;
-      max-width: 400px;
+      max-width: 500px;
     }
 
     input {
-      background-color: #111;
-      border: 1px solid #b88a58;
+      background-color: #000;
+      border: 1px solid #630000;
       color: #eee;
       padding: 10px 15px;
-      border-radius: 5px;
       font-size: 16px;
       text-align: center;
-      transition: 0.3s;
-    }
-
-    input:focus {
-      outline: none;
-      border-color: #d8cfc4;
-      box-shadow: 0 0 10px #b88a58;
     }
 
     button {
       padding: 10px 25px;
       margin-top: 10px;
       font-family: 'Cinzel', serif;
-      background-color: #1a1a1a;
-      color: #d8cfc4;
-      border: 1px solid #b88a58;
-      border-radius: 5px;
+      background-color: #000;
+      color: #b30000;
+      border: 1px solid #630000;
       cursor: pointer;
-      transition: 0.3s;
-    }
-
-    button:hover {
-      background-color: #2a2a2a;
-      color: #fff;
-      box-shadow: 0 0 8px #b88a58;
     }
 
     #content {
       display: none;
       animation: fadeIn 1.5s ease-in;
       margin-top: 30px;
+      max-width: 850px;
+      text-align: left;
+      background-color: rgba(15, 15, 15, 0.95);
+      padding: 40px;
+      border: 1px solid #222;
+      box-shadow: 0 0 50px rgba(0,0,0,1);
     }
 
-    #content h1 {
-      font-family: 'Cinzel', serif;
-      color: #b88a58;
+    .private-note {
+      border-left: 3px solid #b30000;
+      padding: 25px;
+      background: rgba(139, 0, 0, 0.07);
+      margin-bottom: 30px;
+      border-radius: 0 10px 10px 0;
     }
 
-    #content p {
-      font-size: 1.1rem;
-      color: #cfcfcf;
+    .checklist-item {
+        font-family: 'Cinzel', serif;
+        font-size: 1.2rem;
+        letter-spacing: 2px;
+        margin: 10px 0;
     }
+
+    .checked { color: #2e7d32; text-shadow: 0 0 10px #2e7d32; }
+    .unchecked { color: #8b0000; }
 
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(10px); }
       to { opacity: 1; transform: translateY(0); }
     }
+    
+    h3 { font-family: 'Creepster', cursive; color: #8b0000; font-size: 2rem; border-bottom: 1px solid #330000; margin-top: 30px; }
+    strong { color: #e0d0b0; }
+    em { color: #ff4444; font-weight: bold; font-style: normal; }
   </style>
 </head>
 <body>
   <h1>The Veiled Gate</h1>
+  <h2>Enter the Truth</h2>
   <p id="question">“The name of the one who took the last breath from your mother... right before your eyes”</p>
   <input type="text" id="password" placeholder="Enter your answer">
   <br>
   <button id="enterButton">Enter</button>
 
   <div id="content">
-    <h1>Welcome, Traveler of the Mists</h1>
-    <p>You have stepped beyond the veil. The chronicles await.</p>
+    <h1 style="font-size: 3.5rem; text-align: center;">Katya, the Shadow</h1>
+    
+    <section class="private-note">
+      <p>
+        "The blood within you is no longer a silent passenger; it is a choir of whispers, and here in the shadow of the peaks, it has begun to scream. 
+        You’ve felt the thrumming in the cobblestones of this town—a resonance that matches the rhythm of your own heart. 
+        <em>'Karsaran: Break,'</em> the voices urge, a command half-spoken. 
+        You are standing on the precipice of a legacy you never asked for, following a crimson trail your father blazed long ago. 
+        In Barovia, blood does not just spill; it <strong>remembers</strong>."
+      </p>
+    </section>
 	
-		<br>
+    <h3>Main Character Objectives</h3>
+    <p>• <strong>Lineage:</strong> Discover the Truth of your Bloodline; the resonance you feel suggests the answers are hidden within these very walls.</p>
+    <p>• <strong>Power:</strong> The whispers suggest the final syllables of a new <em>Power Word</em> are waiting to be claimed nearby.</p>
+    <p>• <strong>The Shield:</strong> Defend your chosen family. You failed to save the first; you will not fail the second.</p>
+    
+    <div class="checklist-item">
+        <span class="unchecked">( ) Thorgar</span> &nbsp;&nbsp; 
+        <span class="checked">(X) Jade</span> &nbsp;&nbsp; 
+        <span class="unchecked">( ) Tot Pot</span>
+    </div>
 	
-<section class="private-note">
-  <h1>Private Note — Katya, the Shadow</h1>
-  <p><em>
-  The blood hums louder in Barovia’s fog. You’ve begun to hear it speak—soft syllables like broken glass.  
-  “Fas Ro Da: PUSH,” it whispers, but the word is not done with you yet.  
-  Somewhere near, you’ll feel the same thrum your father once followed.  
-  Trust only what bleeds <strong>honestly</strong>.
-  </em></p>
-</section>
-	
-	
-	
-	
-	
-	<br>
-	<h1>Main Character Objectives</h1>
-	 <p>Discover the Truth of your Bloodline, there must be some clues close by, maybe in this town?</p>
-	 <p>Something is telling you the secrects to a new power word can be found close by, maybe in this town?</p>
-	 <p>Protect the party, defend your chosen family with your own life. (Save each member from certain death) </p>
-	 <p>(   )Thorgar(   )Jade(   )Tot Pot</p>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+    <h3>Secrets Only You Know</h3>
+    <p>• The blood-thrum is strongest near the old structures of the town; something familiar is waiting there.</p>
+    <p>• <strong>Roland</strong> is close. You can almost taste the ozone in the air before a storm—the scent of the man who took everything.</p>
   </div>
 
   <script>
@@ -144,17 +144,19 @@
       const button = document.getElementById("enterButton");
       const input = document.getElementById("password");
       const content = document.getElementById("content");
-      const correctAnswer = "roland"; // <--- set your answer here
+      const correctAnswer = "roland"; 
 
       button.addEventListener("click", function() {
         const userAnswer = input.value.trim().toLowerCase();
 
         if (userAnswer === correctAnswer) {
           content.style.display = "block";
+          document.querySelector("h1").style.display = "none";
           document.querySelector("h2").style.display = "none";
           document.getElementById("question").style.display = "none";
           input.style.display = "none";
           button.style.display = "none";
+          document.body.style.justifyContent = "flex-start";
         } else {
           alert("That answer is not correct. Try again...");
         }
