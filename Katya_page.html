@@ -28,6 +28,7 @@
       margin: 0;
     }
 
+    /* Required for script stability */
     h2 {
       font-family: 'Cinzel', serif;
       font-size: 1.5rem;
@@ -62,16 +63,21 @@
       cursor: pointer;
     }
 
+    /* --- Crimson Rite Glow Effect --- */
     #content {
       display: none;
-      animation: fadeIn 1.5s ease-in;
+      animation: fadeIn 1.5s ease-in, ritePulse 4s infinite alternate;
       margin-top: 30px;
       max-width: 850px;
       text-align: left;
       background-color: rgba(15, 15, 15, 0.95);
       padding: 40px;
-      border: 1px solid #222;
-      box-shadow: 0 0 50px rgba(0,0,0,1);
+      border: 1px solid #b30000; /* The Rite Border */
+    }
+
+    @keyframes ritePulse {
+      0% { box-shadow: 0 0 10px #330000; border-color: #4a0000; }
+      100% { box-shadow: 0 0 30px #b30000; border-color: #ff0000; }
     }
 
     .private-note {
@@ -79,7 +85,6 @@
       padding: 25px;
       background: rgba(139, 0, 0, 0.07);
       margin-bottom: 30px;
-      border-radius: 0 10px 10px 0;
     }
 
     .checklist-item {
