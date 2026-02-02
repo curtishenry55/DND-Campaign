@@ -7,11 +7,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Creepster&family=IM+Fell+DW+Pica:ital@1&family=Cinzel:wght@600&display=swap" rel="stylesheet">
     
     <style>
-        /* --- Aesthetic Sync with Homepage --- */
         body {
             background-color: #0a0a0a;
             background: radial-gradient(circle, #1a1a1a 0%, #050505 100%);
-            color: #c4b494; /* Parchment color */
+            color: #c4b494;
             font-family: 'IM Fell DW Pica', serif;
             margin: 0; padding: 0; line-height: 1.7;
             min-height: 100vh;
@@ -21,24 +20,16 @@
             align-items: center;
         }
 
-        /* --- Login Gate UI --- */
         #gate { text-align: center; }
-
         .gate-header {
             font-family: 'Creepster', cursive;
             font-size: 5rem;
             color: #b30000;
             text-shadow: 3px 3px 0px #000, 0 0 20px #660000;
-            letter-spacing: 5px;
             margin: 0;
         }
 
-        .question {
-            font-style: italic;
-            font-size: 1.2rem;
-            color: #a49174;
-            margin-bottom: 25px;
-        }
+        h2 { font-family: 'Cinzel', serif; font-size: 1.5rem; color: #8b0000; margin-top: 10px; }
 
         input {
             background-color: #000;
@@ -47,10 +38,7 @@
             padding: 12px 20px;
             font-size: 18px;
             text-align: center;
-            font-family: 'IM Fell DW Pica', serif;
         }
-
-        input:focus { outline: none; border-color: #ff0000; box-shadow: 0 0 15px #8b0000; }
 
         button {
             padding: 12px 30px;
@@ -60,12 +48,8 @@
             color: #b30000;
             border: 1px solid #630000;
             cursor: pointer;
-            transition: 0.3s;
         }
 
-        button:hover { background-color: #8b0000; color: #fff; box-shadow: 0 0 15px #ff0000; }
-
-        /* --- Secret Content (The Ledger Page) --- */
         #content {
             display: none;
             max-width: 850px;
@@ -77,20 +61,70 @@
             animation: fadeIn 2s ease-in;
         }
 
-        h1.char-title {
-            font-family: 'Creepster', cursive;
-            font-size: 3.5rem;
-            color: #b30000;
+        /* --- Cravenedge Sword Meter --- */
+        .sword-container {
+            margin: 40px 0;
             text-align: center;
-            margin-top: 0;
+            position: relative;
         }
 
-        h2 {
+        .sword-label {
             font-family: 'Creepster', cursive;
-            font-size: 2.2rem;
-            color: #8b0000;
-            border-bottom: 1px solid #330000;
-            margin-top: 40px;
+            color: #b30000;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            display: block;
+            letter-spacing: 2px;
+        }
+
+        .sword-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 40px;
+        }
+
+        /* The Hilt */
+        .hilt {
+            width: 40px;
+            height: 10px;
+            background: #444;
+            position: relative;
+            border: 1px solid #222;
+        }
+        .hilt::before {
+            content: '';
+            position: absolute;
+            left: -10px; top: -15px;
+            width: 10px; height: 40px;
+            background: #222;
+            border: 1px solid #b30000;
+        }
+
+        /* The Blade/Bar */
+        .blade-bg {
+            width: 300px;
+            height: 25px;
+            background: #111;
+            border: 1px solid #444;
+            position: relative;
+            clip-path: polygon(0% 0%, 90% 0%, 100% 50%, 90% 100%, 0% 100%);
+            margin-left: 5px;
+        }
+
+        .blade-fill {
+            width: 45%; /* CURRENT SATIATION - UPDATE THIS MANUALLY */
+            height: 100%;
+            background: linear-gradient(to right, #330000, #b30000, #ff0000);
+            box-shadow: 0 0 15px #b30000;
+            transition: width 1s ease-in-out;
+        }
+
+        .hunger-text {
+            font-style: italic;
+            font-size: 1rem;
+            color: #a49174;
+            margin-top: 15px;
         }
 
         .private-note {
@@ -99,61 +133,71 @@
             border-left: 3px solid #630000;
             font-style: italic;
             margin-bottom: 30px;
-            font-size: 1.2rem;
-            text-align: center;
+            font-size: 1.1rem;
         }
 
+        h1.char-title { font-family: 'Creepster', cursive; font-size: 3.5rem; color: #b30000; text-align: center; margin: 0; }
+        h3 { font-family: 'Creepster', cursive; font-size: 2.2rem; color: #8b0000; border-bottom: 1px solid #330000; margin-top: 40px; }
         ul { list-style: none; padding: 0; }
-        li { margin-bottom: 20px; padding-left: 15px; border-left: 2px solid #4a0000; }
+        li { margin-bottom: 15px; padding-left: 15px; border-left: 2px solid #4a0000; }
         strong { color: #e0d0b0; }
         em { color: #ff4444; font-weight: bold; font-style: normal; }
 
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #0a0a0a; }
-        ::-webkit-scrollbar-thumb { background: #4a0000; }
     </style>
 </head>
 <body>
 
     <div id="gate">
         <h1 class="gate-header">The Veiled Gate</h1>
-        <p class="question">“The name of the one who speaks in a way that only you can hear...”</p>
+        <h2>Step Through</h2>
+        <p style="color: #a49174; font-style: italic;">“The name of the one who speaks in a way that only you can hear...”</p>
         <input type="password" id="password" placeholder="Answer with the name of the blade">
         <br>
-        <button id="enterButton">Step Through the Veil</button>
+        <button id="enterButton">Enter</button>
     </div>
 
     <div id="content">
         <h1 class="char-title">Thorgar, the Mountain</h1>
+
+        <div class="sword-container">
+            <span class="sword-label">Cravenedge Hunger</span>
+            <div class="sword-wrapper">
+                <div class="hilt"></div>
+                <div class="blade-bg">
+                    <div class="blade-fill"></div>
+                </div>
+            </div>
+            <p class="hunger-text">
+                The blade pulses against your palm. It is <strong>restless</strong>. 
+                If the red does not reach the tip soon, it may find its own way to feed.
+            </p>
+        </div>
         
         <div class="private-note">
             <p>
-                "The foundations of Barovia still tremble with the memory of giants and the echo of the avalanche. 
-                You walk where the mountains once stood tall—now, you are the only peak left in this sunless valley. 
-                When the thunder answers your fury, do not just strike; listen. 
-                The storm calls you by your true name—the one you tried to bury beneath the corpses of your enemies. 
+                "The foundations of Barovia still tremble with the memory of giants. 
+                You walk where the mountains once stood tall—now, you are the only peak left. 
+                When the thunder answers your fury, listen. The storm calls you by your true name. 
                 Feed the storm your courage, Thorgar, for if you feed it only your wrath, it will consume the mountain whole."
             </p>
         </div>
 
-        <h2>Main Character Objectives</h2>
+        <h3>Main Character Objectives</h3>
         <ul>
-            <li>Prove your strength without succumbing to the rage; Barovia tests more than muscle, it tests the man behind it.</li>
-            <li>Hunt the beast that stalks the perimeter of your dreams—the truth is hidden in its hide.</li>
-            <li>Protect <strong>Jade</strong> when the earth begins to tremble, regardless of the blood price.</li>
-            <li>Seek a tribute worthy of the peaks; reclaim the lost strength of the mountains.</li>
-            <li>Satiate <em>Cravenedge</em>... or learn to master the hunger before it masters you.</li>
-            <li>Persuade Jade to... "unsheath your sword."</li>
+            <li><strong>Restraint:</strong> Prove your strength without succumbing to the rage.</li>
+            <li><strong>The Beast:</strong> Hunt the creature that stalks your dreams; the truth is in its hide.</li>
+            <li><strong>The Vow:</strong> Protect <strong>Jade</strong> when the earth begins to tremble, no matter the blood price.</li>
+            <li><strong>Legacy:</strong> Seek a tribute worthy of the peaks; reclaim the lost strength of the mountains.</li>
+            <li><strong>The Master:</strong> Satiate <em>Cravenedge</em>... or learn to master the hunger before it masters you.</li>
+            <li><strong>Bond:</strong> Persuade Jade to... "unsheath your sword."</li>
         </ul>
 
-        <h2>Secrets Only You Know</h2>
+        <h3>Secrets Only You Know</h3>
         <ul>
-            <li><strong>The Darkest Impulse:</strong> In the dead of night at the camp, you felt the cold steel of your blade urging you to slaughter the sleeping children. You barely held back.</li>
-            <li><strong>The Next Scent:</strong> The blade is restless. If it is not fed soon, you fear you may not get to choose its next target.</li>
-            <li><strong>A Soft Spot:</strong> You will miss the boy, Freak. His admiration is a rare thing in this land. Perhaps a parting gift is warranted before the orphanage gates close.</li>
+            <li><strong>The Impulse:</strong> At camp, you felt the cold steel urging you to slaughter the sleeping children.</li>
+            <li><strong>The Hunger:</strong> If the blade isn't fed soon, you fear you may not get to choose the next victim.</li>
+            <li><strong>The Gift:</strong> You will miss the boy, Freak. A parting gift might be appropriate before leaving Vallaki.</li>
         </ul>
     </div>
 
@@ -165,28 +209,18 @@
             const content = document.getElementById("content");
             const correctAnswer = "cravenedge";
 
-            function unlock() {
+            button.addEventListener("click", function() {
                 const userAnswer = input.value.trim().toLowerCase();
                 if (userAnswer === correctAnswer) {
                     gate.style.display = "none";
                     content.style.display = "block";
                     document.body.style.justifyContent = "flex-start";
                 } else {
-                    alert("The Mists of Barovia reject your answer. Try again.");
+                    alert("The mists refuse you. Try again.");
                 }
-            }
+            });
 
-            button.addEventListener("click", unlock);
-            input.addEventListener("keypress", (e) => { if (e.key === "Enter") unlock(); });
-
-            // Candlelight Flicker Script
-            const contentDiv = document.getElementById('content');
-            setInterval(() => {
-                if(content.style.display === "block") {
-                    const opacity = 0.94 + (Math.random() * 0.06);
-                    contentDiv.style.backgroundColor = `rgba(15, 15, 15, ${opacity})`;
-                }
-            }, 120);
+            input.addEventListener("keypress", (e) => { if (e.key === "Enter") button.click(); });
         });
     </script>
 </body>
