@@ -1,173 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Veiled Gate</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Spectral+SC&display=swap');
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Veiled Gate - Thorgar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=IM+Fell+DW+Pica:ital@1&family=Cinzel:wght@600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- Aesthetic Sync with Homepage --- */
+        body {
+            background-color: #0a0a0a;
+            background: radial-gradient(circle, #1a1a1a 0%, #050505 100%);
+            color: #c4b494; /* Parchment color */
+            font-family: 'IM Fell DW Pica', serif;
+            margin: 0; padding: 0; line-height: 1.7;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
 
-    body {
-      background-color: #000;
-      color: #d8cfc4;
-      font-family: 'Spectral SC', serif;
-      text-align: center;
-      height: 100vh;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    }
+        /* --- Login Gate UI --- */
+        #gate { text-align: center; }
 
-    h2 {
-      font-family: 'Cinzel', serif;
-      font-size: 2rem;
-      color: #b88a58;
-      text-shadow: 0 0 10px #000;
-      letter-spacing: 1px;
-    }
+        .gate-header {
+            font-family: 'Creepster', cursive;
+            font-size: 5rem;
+            color: #b30000;
+            text-shadow: 3px 3px 0px #000, 0 0 20px #660000;
+            letter-spacing: 5px;
+            margin: 0;
+        }
 
-    p {
-      color: #bbb;
-      font-size: 1.1rem;
-      margin-bottom: 20px;
-      max-width: 400px;
-    }
+        .question {
+            font-style: italic;
+            font-size: 1.2rem;
+            color: #a49174;
+            margin-bottom: 25px;
+        }
 
-    input {
-      background-color: #111;
-      border: 1px solid #b88a58;
-      color: #eee;
-      padding: 10px 15px;
-      border-radius: 5px;
-      font-size: 16px;
-      text-align: center;
-      transition: 0.3s;
-    }
+        input {
+            background-color: #000;
+            border: 1px solid #630000;
+            color: #eee;
+            padding: 12px 20px;
+            font-size: 18px;
+            text-align: center;
+            font-family: 'IM Fell DW Pica', serif;
+        }
 
-    input:focus {
-      outline: none;
-      border-color: #d8cfc4;
-      box-shadow: 0 0 10px #b88a58;
-    }
+        input:focus { outline: none; border-color: #ff0000; box-shadow: 0 0 15px #8b0000; }
 
-    button {
-      padding: 10px 25px;
-      margin-top: 10px;
-      font-family: 'Cinzel', serif;
-      background-color: #1a1a1a;
-      color: #d8cfc4;
-      border: 1px solid #b88a58;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
+        button {
+            padding: 12px 30px;
+            margin-top: 20px;
+            font-family: 'Cinzel', serif;
+            background-color: #000;
+            color: #b30000;
+            border: 1px solid #630000;
+            cursor: pointer;
+            transition: 0.3s;
+        }
 
-    button:hover {
-      background-color: #2a2a2a;
-      color: #fff;
-      box-shadow: 0 0 8px #b88a58;
-    }
+        button:hover { background-color: #8b0000; color: #fff; box-shadow: 0 0 15px #ff0000; }
 
-    #content {
-      display: none;
-      animation: fadeIn 1.5s ease-in;
-      margin-top: 30px;
-    }
+        /* --- Secret Content (The Ledger Page) --- */
+        #content {
+            display: none;
+            max-width: 850px;
+            margin: 50px auto;
+            padding: 50px;
+            background-color: rgba(15, 15, 15, 0.95);
+            border: 1px solid #222;
+            box-shadow: 0 0 50px rgba(0,0,0,1);
+            animation: fadeIn 2s ease-in;
+        }
 
-    #content h1 {
-      font-family: 'Cinzel', serif;
-      color: #b88a58;
-    }
+        h1.char-title {
+            font-family: 'Creepster', cursive;
+            font-size: 3.5rem;
+            color: #b30000;
+            text-align: center;
+            margin-top: 0;
+        }
 
-    #content p {
-      font-size: 1.1rem;
-      color: #cfcfcf;
-    }
+        h2 {
+            font-family: 'Creepster', cursive;
+            font-size: 2.2rem;
+            color: #8b0000;
+            border-bottom: 1px solid #330000;
+            margin-top: 40px;
+        }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-  </style>
+        .private-note {
+            background: rgba(139, 0, 0, 0.05);
+            padding: 30px;
+            border-left: 3px solid #630000;
+            font-style: italic;
+            margin-bottom: 30px;
+            font-size: 1.2rem;
+            text-align: center;
+        }
+
+        ul { list-style: none; padding: 0; }
+        li { margin-bottom: 20px; padding-left: 15px; border-left: 2px solid #4a0000; }
+        strong { color: #e0d0b0; }
+        em { color: #ff4444; font-weight: bold; font-style: normal; }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0a0a0a; }
+        ::-webkit-scrollbar-thumb { background: #4a0000; }
+    </style>
 </head>
 <body>
-  <h1>The Veiled Gate</h1>
-  <p id="question">“The name of the one who speaks in a way that only you can hear...”</p>
-  <input type="text" id="password" placeholder="Enter your answer">
-  <br>
-  <button id="enterButton">Enter</button>
 
-  <div id="content">
-    <h1>Welcome, Traveler of the Mists</h1>
-    <p>You have stepped beyond the veil. The chronicles await.</p>
-	
-		<br>
-	
-	<section class="private-note">
-  <h3>Private Note — Thorgar, the Mountain</h3>
-  <p><em>
-  The earth beneath Barovia remembers the weight of giants and the roar of avalanches.  
-  You stand where mountains once walked.  
-  When thunder answers your rage, listen closely—  
-  the storm calls you by your true name, the one you buried under victory.  
-  Feed it courage, not wrath.
-  </em></p>
-</section>
-	
-	
-	
+    <div id="gate">
+        <h1 class="gate-header">The Veiled Gate</h1>
+        <p class="question">“The name of the one who speaks in a way that only you can hear...”</p>
+        <input type="password" id="password" placeholder="Answer with the name of the blade">
+        <br>
+        <button id="enterButton">Step Through the Veil</button>
+    </div>
 
+    <div id="content">
+        <h1 class="char-title">Thorgar, the Mountain</h1>
+        
+        <div class="private-note">
+            <p>
+                "The foundations of Barovia still tremble with the memory of giants and the echo of the avalanche. 
+                You walk where the mountains once stood tall—now, you are the only peak left in this sunless valley. 
+                When the thunder answers your fury, do not just strike; listen. 
+                The storm calls you by your true name—the one you tried to bury beneath the corpses of your enemies. 
+                Feed the storm your courage, Thorgar, for if you feed it only your wrath, it will consume the mountain whole."
+            </p>
+        </div>
 
-	
-	
-	
-	
-	<br>
-	<h1>Main Character Objectives</h1>
-	 <p>Prove your strength without raging, Barovia tests more than muscle, it tests restraint. </p>
-	 <p>Hunt the beast that haunts your dreams, doing so might reveala hidden truth</p>
-	  <p>Protect Jade when the Earth Trembles, no matter the cost...</p>
-	 <p>Reclaim the Strength of the Mountains, a tribute such as weapon?</p>
-	 <p>Feed Cravenedge to it's maximum potential, or not...</p>
-	 <p>Convince Jade to umm... "unsheath you're sword"</p>
-	 
-	
-	
-	<h1>Secrects Only You Know</h1>
-	<p>During your time at camp while you were on watch you were dangerously close to murdering the sleeping Children.</p>
-	<p>You aren't sure who the target might be the next time the blade hasn't been satiated for a while</p>
-	<p>You are going to miss having Freak around since he looked up to you so much, maybe you can give him a smal gift before leaving him at the orphanage?</p>
-	
-	
-	
-	
-	
-	
-  </div>
+        <h2>Main Character Objectives</h2>
+        <ul>
+            <li>Prove your strength without succumbing to the rage; Barovia tests more than muscle, it tests the man behind it.</li>
+            <li>Hunt the beast that stalks the perimeter of your dreams—the truth is hidden in its hide.</li>
+            <li>Protect <strong>Jade</strong> when the earth begins to tremble, regardless of the blood price.</li>
+            <li>Seek a tribute worthy of the peaks; reclaim the lost strength of the mountains.</li>
+            <li>Satiate <em>Cravenedge</em>... or learn to master the hunger before it masters you.</li>
+            <li>Persuade Jade to... "unsheath your sword."</li>
+        </ul>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      const button = document.getElementById("enterButton");
-      const input = document.getElementById("password");
-      const content = document.getElementById("content");
-      const correctAnswer = "cravenedge"; // <--- set your answer here
+        <h2>Secrets Only You Know</h2>
+        <ul>
+            <li><strong>The Darkest Impulse:</strong> In the dead of night at the camp, you felt the cold steel of your blade urging you to slaughter the sleeping children. You barely held back.</li>
+            <li><strong>The Next Scent:</strong> The blade is restless. If it is not fed soon, you fear you may not get to choose its next target.</li>
+            <li><strong>A Soft Spot:</strong> You will miss the boy, Freak. His admiration is a rare thing in this land. Perhaps a parting gift is warranted before the orphanage gates close.</li>
+        </ul>
+    </div>
 
-      button.addEventListener("click", function() {
-        const userAnswer = input.value.trim().toLowerCase();
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const button = document.getElementById("enterButton");
+            const input = document.getElementById("password");
+            const gate = document.getElementById("gate");
+            const content = document.getElementById("content");
+            const correctAnswer = "cravenedge";
 
-        if (userAnswer === correctAnswer) {
-          content.style.display = "block";
-          document.querySelector("h2").style.display = "none";
-          document.getElementById("question").style.display = "none";
-          input.style.display = "none";
-          button.style.display = "none";
-        } else {
-          alert("That answer is not correct. Try again...");
-        }
-      });
-    });
-  </script>
+            function unlock() {
+                const userAnswer = input.value.trim().toLowerCase();
+                if (userAnswer === correctAnswer) {
+                    gate.style.display = "none";
+                    content.style.display = "block";
+                    document.body.style.justifyContent = "flex-start";
+                } else {
+                    alert("The Mists of Barovia reject your answer. Try again.");
+                }
+            }
+
+            button.addEventListener("click", unlock);
+            input.addEventListener("keypress", (e) => { if (e.key === "Enter") unlock(); });
+
+            // Candlelight Flicker Script
+            const contentDiv = document.getElementById('content');
+            setInterval(() => {
+                if(content.style.display === "block") {
+                    const opacity = 0.94 + (Math.random() * 0.06);
+                    contentDiv.style.backgroundColor = `rgba(15, 15, 15, ${opacity})`;
+                }
+            }, 120);
+        });
+    </script>
 </body>
 </html>
