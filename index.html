@@ -1,175 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Bloody Ledger</title>
-    <link href="https://fonts.googleapis.com/css2?family=Creepster&family=IM+Fell+DW+Pica:ital@1&display=swap" rel="stylesheet">
+<div id="slide-viewer" style="text-align: center; background: #1a1a1a; padding: 20px; border-radius: 8px;">
+    <h2 style="color: #d4af37; font-family: 'Garamond', serif;">The Bloody Ledger: Campaign Slides</h2>
     
-    <style>
-        body {
-            background-color: #0a0a0a;
-            background: radial-gradient(circle, #1a1a1a 0%, #050505 100%);
-            color: #c4b494;
-            font-family: 'IM Fell DW Pica', serif;
-            margin: 0; padding: 0; line-height: 1.7;
-        }
-
-        .header {
-            background-color: #000;
-            padding: 60px 20px;
-            border-bottom: 3px solid #8b0000;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.9);
-            text-align: center;
-        }
-
-        h1 {
-            font-family: 'Creepster', cursive;
-            font-size: clamp(3rem, 10vw, 6rem);
-            color: #b30000; 
-            text-shadow: 3px 3px 0px #000, 0 0 20px #660000;
-            margin: 0; letter-spacing: 8px;
-        }
-
-        .subtitle { font-size: 1.1rem; color: #a49174; font-style: italic; margin-top: 10px; }
-
-        .main-logo {
-            display: block;
-            margin: 30px auto 0 auto;
-            max-width: 220px;
-            filter: drop-shadow(0 0 15px rgba(139, 0, 0, 0.6));
-        }
-
-        .container {
-            max-width: 850px;
-            margin: 50px auto;
-            padding: 40px;
-            background-color: rgba(15, 15, 15, 0.95);
-            border: 1px solid #222;
-            box-shadow: 0 0 50px rgba(0,0,0,1);
-        }
-
-        h2 {
-            font-family: 'Creepster', cursive;
-            font-size: 2.2rem;
-            color: #8b0000;
-            border-bottom: 1px solid #330000;
-            margin-top: 40px;
-            padding-bottom: 10px;
-        }
-
-        ul { list-style: none; padding: 0; }
-        
-        li {
-            margin-bottom: 15px;
-            padding-left: 15px;
-            border-left: 3px solid #4a0000;
-        }
-
-        strong { color: #e0d0b0; }
-        em { color: #ff4444; font-weight: bold; font-style: normal; }
-
-        .secret-link {
-            font-size: 0.85rem;
-            color: #8b0000;
-            text-decoration: none;
-            font-style: italic;
-            border: 1px solid #330000;
-            padding: 2px 8px;
-            margin-left: 10px;
-            background: #000;
-            transition: all 0.3s;
-            display: inline-block;
-        }
-
-        .secret-link:hover {
-            color: #ff0000;
-            border-color: #ff0000;
-            box-shadow: 0 0 8px #ff0000;
-        }
-
-        .divider {
-            height: 2px;
-            margin: 50px 0;
-            background: linear-gradient(to right, transparent, #630000, #ff0000, #630000, transparent);
-        }
-
-        .map-image {
-            width: 100%;
-            filter: sepia(0.2) contrast(1.1) brightness(0.7);
-            border: 1px solid #330000;
-            margin: 20px 0;
-            display: block;
-        }
-
-        a { color: #e6e6e6; text-decoration: none; border-bottom: 1px dashed #630000; }
-        a:hover { color: #ff0000; border-bottom: 1px solid #ff0000; }
-    </style>
-</head>
-<body>
-
-    <header class="header">
-        <h1>The Bloody Ledger</h1>
-        <p class="subtitle">The Record of the Guardians of the Dungeon's Tale and Fate</p>
-        <img src="logo.png" alt="Bloody Ledger Logo" class="main-logo">
-    </header>
-
-    <div class="container">
-
-        <section id="guardians">
-            <h2>The Guardians of the Dungeon</h2>
-            <ul>
-                <li>
-                    <strong>Thorgar "The Mountain":</strong> Human Barbarian.
-                    <a href="Thorgar_page.html" class="secret-link">Personal Ledger (PW)</a>
-                </li>
-                <li>
-                    <strong>Tot Pot "The Light":</strong> Dwarf Cleric.
-                    <a href="Totpot_page.html" class="secret-link">Divine Ledger (PW)</a>
-                </li>
-                <li>
-                    <strong>Katya "The Shadow":</strong> Human Bloodhunter.
-                    <a href="Katya_page.html" class="secret-link">Crimson Ledger (PW)</a>
-                </li>
-                <li>
-                    <strong>Jade "The Emerald Flame":</strong> Human Druid.
-                    <a href="Jade_page.html" class="secret-link">Primal Ledger (PW)</a>
-                </li>
-            </ul>
-        </section>
-
-        <div class="divider"></div>
-
-        <section id="session-log">
-            <h2>Key events from the last session</h2>
-            <ul>
-                <li>1. The Party fought and defeated the Shadow Demon in the attic of the Orphanage.</li>
-                <li>2. Thorgar ended up beheading Cedrick the young possessed boy, this was enough to get his blade <em>Cravenedge</em> to morph into a longer more deadly weapon.</li>
-                <li>3. <strong>Everyone leveled up to Level 5!!!!</strong></li>
-                <li>4. Ms. Belasco was thankful for you banishing the demon she gave you several items for the party to use moving forward including a set of <em>Sending Stones</em>.</li>
-                <li>5. It seems that all of you had similar dreams with one thing in common, Strahd was going to be calling for you... <strong>SOON!</strong></li>
-            </ul>
-        </section>
-
-        <div class="divider"></div>
-
-        <section id="map-reference">
-            <h2>Reference: Map of Barovia</h2>
-            <img src="Barovia Map middle.jpg" alt="Map of Barovia" class="map-image">
-            <p style="text-align: center;">
-                <a href="Barovia Map middle.jpg" target="_blank">Download Annotated Map</a>
-            </p>
-        </section>
-
+    <div id="slide-container">
+        <img id="current-slide" src="assets/images/Slide_0.png" alt="Campaign Slide" style="max-width: 100%; border: 2px solid #333;">
     </div>
 
-    <script>
-        const container = document.querySelector('.container');
-        setInterval(() => {
-            const opacity = 0.94 + (Math.random() * 0.06);
-            container.style.backgroundColor = `rgba(15, 15, 15, ${opacity})`;
-        }, 120);
-    </script>
+    <div style="margin-top: 15px;">
+        <button onclick="changeSlide(-1)" style="padding: 10px 20px; cursor: pointer;">Previous</button>
+        <span id="slide-number" style="margin: 0 15px; color: white;">Slide 0 / 40</span>
+        <button onclick="changeSlide(1)" style="padding: 10px 20px; cursor: pointer;">Next</button>
+    </div>
+</div>
 
-</body>
-</html>
+<script>
+    let currentIdx = 0;
+    const totalSlides = 40;
+    const slideImg = document.getElementById('current-slide');
+    const slideNumText = document.getElementById('slide-number');
+
+    function changeSlide(direction) {
+        currentIdx += direction;
+
+        // Loop logic: stay within 0 and 40
+        if (currentIdx < 0) currentIdx = totalSlides;
+        if (currentIdx > totalSlides) currentIdx = 0;
+
+        // Update the image source to your new assets/images folder
+        slideImg.src = `assets/images/Slide_${currentIdx}.png`;
+        slideNumText.innerText = `Slide ${currentIdx} / ${totalSlides}`;
+    }
+</script>
