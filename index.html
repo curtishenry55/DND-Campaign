@@ -114,20 +114,41 @@
         <img src="logo.png" alt="Bloody Ledger Logo" class="main-logo">
     </header>
 
-    <div class="container">
-<div id="slide-viewer" style="text-align: center; background: #1a1a1a; padding: 20px; border-radius: 8px;">
-    <h2 style="color: #d4af37; font-family: 'Garamond', serif;">The Bloody Ledger: Campaign Slides</h2>
+    <div id="slide-viewer" style="text-align: center; background: #1a1a1a; padding: 20px; border-radius: 8px; border: 1px solid #444;">
+    <h2 style="color: #d4af37; font-family: 'Garamond', serif; letter-spacing: 2px;">THE BLOODY LEDGER</h2>
     
-    <div id="slide-container">
-        <img id="current-slide" src="assets/images/Slide_0.png" alt="Campaign Slide" style="max-width: 100%; border: 2px solid #333;">
+    <div id="slide-container" style="min-height: 400px; display: flex; align-items: center; justify-content: center;">
+        <img id="current-slide" src="images/Slide_0.png" alt="Campaign Slide" style="max-width: 100%; border: 3px solid #333; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
     </div>
 
-    <div style="margin-top: 15px;">
-        <button onclick="changeSlide(-1)" style="padding: 10px 20px; cursor: pointer;">Previous</button>
-        <span id="slide-number" style="margin: 0 15px; color: white;">Slide 0 / 40</span>
-        <button onclick="changeSlide(1)" style="padding: 10px 20px; cursor: pointer;">Next</button>
+    <div style="margin-top: 20px;">
+        <button onclick="changeSlide(-1)" style="background: #333; color: #d4af37; border: 1px solid #d4af37; padding: 10px 25px; cursor: pointer; font-family: serif;">PREVIOUS</button>
+        <span id="slide-number" style="margin: 0 20px; color: #eee; font-family: monospace; font-size: 1.2rem;">Slide 0 / 40</span>
+        <button onclick="changeSlide(1)" style="background: #333; color: #d4af37; border: 1px solid #d4af37; padding: 10px 25px; cursor: pointer; font-family: serif;">NEXT</button>
     </div>
 </div>
+
+<script>
+    let currentIdx = 0;
+    const totalSlides = 40;
+    const slideImg = document.getElementById('current-slide');
+    const slideNumText = document.getElementById('slide-number');
+
+    function changeSlide(direction) {
+        currentIdx += direction;
+
+        // Loop logic: stay within 0 and 40
+        if (currentIdx < 0) currentIdx = totalSlides;
+        if (currentIdx > totalSlides) currentIdx = 0;
+
+        // UPDATED PATH: Pointing to the new folder on the main branch
+        slideImg.src = `images/Slide_${currentIdx}.png`;
+        slideNumText.innerText = `Slide ${currentIdx} / ${totalSlides}`;
+        
+        // Console log to help you debug if something breaks
+        console.log("Loading slide:", slideImg.src);
+    }
+</script>
 
 <script>
     let currentIdx = 0;
