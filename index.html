@@ -114,17 +114,15 @@
         <img src="logo.png" alt="Bloody Ledger Logo" class="main-logo">
     </header>
 
-    <div id="slide-viewer" style="text-align: center; background: #1a1a1a; padding: 20px; border-radius: 8px; border: 1px solid #444;">
-    <h2 style="color: #d4af37; font-family: 'Garamond', serif; letter-spacing: 2px;">THE BLOODY LEDGER</h2>
-    
-    <div id="slide-container" style="min-height: 400px; display: flex; align-items: center; justify-content: center;">
-        <img id="current-slide" src="images/Slide_0.png" alt="Campaign Slide" style="max-width: 100%; border: 3px solid #333; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+<div id="slide-viewer" style="margin: 30px auto; max-width: 700px; text-align: center; background: #000; padding: 10px; border: 1px solid #4a0000;">
+    <div id="slide-container" style="display: flex; justify-content: center; align-items: center; touch-action: pan-y;">
+        <img id="current-slide" src="images/Slide_0.png" alt="Loading Slide..." style="max-width: 100%; height: auto; border: 1px solid #333; cursor: pointer;">
     </div>
 
-    <div style="margin-top: 20px;">
-        <button onclick="changeSlide(-1)" style="background: #333; color: #d4af37; border: 1px solid #d4af37; padding: 10px 25px; cursor: pointer; font-family: serif;">PREVIOUS</button>
-        <span id="slide-number" style="margin: 0 20px; color: #eee; font-family: monospace; font-size: 1.2rem;">Slide 0 / 40</span>
-        <button onclick="changeSlide(1)" style="background: #333; color: #d4af37; border: 1px solid #d4af37; padding: 10px 25px; cursor: pointer; font-family: serif;">NEXT</button>
+    <div style="margin-top: 15px; display: flex; justify-content: center; align-items: center; gap: 20px;">
+        <button onclick="changeSlide(-1)" style="background: #1a0000; color: #b30000; border: 1px solid #8b0000; padding: 10px 20px; font-family: 'Creepster', cursive; cursor: pointer;">PREV</button>
+        <span id="slide-number" style="color: #666; font-family: monospace;">Slide 0 / 40</span>
+        <button onclick="changeSlide(1)" style="background: #1a0000; color: #b30000; border: 1px solid #8b0000; padding: 10px 20px; font-family: 'Creepster', cursive; cursor: pointer;">NEXT</button>
     </div>
 </div>
 
@@ -136,38 +134,28 @@
 
     function changeSlide(direction) {
         currentIdx += direction;
-
-        // Loop logic: stay within 0 and 40
         if (currentIdx < 0) currentIdx = totalSlides;
         if (currentIdx > totalSlides) currentIdx = 0;
-
-        // UPDATED PATH: Pointing to the new folder on the main branch
-        slideImg.src = `images/Slide_${currentIdx}.png`;
-        slideNumText.innerText = `Slide ${currentIdx} / ${totalSlides}`;
         
-        // Console log to help you debug if something breaks
-        console.log("Loading slide:", slideImg.src);
+        // Updates the source
+        slideImg.src = "images/Slide_" + currentIdx + ".png";
+        slideNumText.innerText = "Slide " + currentIdx + " / " + totalSlides;
     }
+
+    // Touch Support for Mobile
+    let startX = 0;
+    slideImg.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, false);
+    slideImg.addEventListener('touchend', e => {
+        let endX = e.changedTouches[0].clientX;
+        if (startX - endX > 50) changeSlide(1);
+        if (endX - startX > 50) changeSlide(-1);
+    }, false);
 </script>
 
-<script>
-    let currentIdx = 0;
-    const totalSlides = 40;
-    const slideImg = document.getElementById('current-slide');
-    const slideNumText = document.getElementById('slide-number');
 
-    function changeSlide(direction) {
-        currentIdx += direction;
 
-        // Loop logic: stay within 0 and 40
-        if (currentIdx < 0) currentIdx = totalSlides;
-        if (currentIdx > totalSlides) currentIdx = 0;
+    <div class="container">
 
-        // Update the image source to your new assets/images folder
-        slideImg.src = `assets/images/Slide_${currentIdx}.png`;
-        slideNumText.innerText = `Slide ${currentIdx} / ${totalSlides}`;
-    }
-</script>
         <section id="guardians">
             <h2>The Guardians of the Dungeon</h2>
             <ul>
